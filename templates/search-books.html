@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="container">
+    <h2 class="pb-2 border-bottom display-5 fw-bold text-center" 
+      style="padding-top: 20px;">
+      Book Search
+    </h2>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+
+      <form class="input-group" id="form-search"> 
+        <div class="input-group-btn search-panel">
+          <select name="search_param" 
+                  id="filter-type" 
+                  class="btn btn-default dropdown-toggle" 
+                  data-toggle="dropdown">
+            <option>Select here</option>
+            <option value="full">Full text</option>
+            <option value="free-ebooks">Free ebooks</option>
+            <option value="paid-ebooks">Paid ebooks</option>
+          </select>
+        </div>
+        <input type="text" 
+               class="form-control"
+               id="user-input" 
+               placeholder="Search Book..."
+               required>
+          <button type="button" 
+                  class="btn btn-primary"
+                  id="click">
+                  Search
+          </button>
+      </form>     
+    </div>       
+  </div>  
+</div>    
+
+
+<div class="container">
+  <div id="search-results">
+ 
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<script>
+  const googleKey = "{{ googleKey }}";
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+        crossorigin="anonymous">
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script src="../public/js/local-storage.js"></script>
+
+<script src="../public/js/search.js"></script>
+{% endblock %}

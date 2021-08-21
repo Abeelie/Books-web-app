@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="container">
+    <h2 class="pb-2 border-bottom display-5 fw-bold text-center" 
+      style="padding-top: 20px;">
+      Your Search History
+    </h2>
+</div>
+
+<div class="container">
+  <div class="emails">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="content">
+            <h2 class="text-center">
+              Email
+            </h2>
+              <h6 class="content-tuned text-center">
+                Send this list to your email
+              </h6>
+              <form id="email">
+                <div class="input-group"> 
+                  <input type="email" 
+                         class="form-control"
+                         id="email-input" 
+                         placeholder="Enter email"
+                         required> 
+                    <span class="input-group-btn"> 
+                      <button class="btn btn-primary">
+                              Email Now
+                      </button> 
+                 </div>
+                 </form>
+             </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="container">
+  <div id="search-history">
+   
+  </div>
+</div>
+
+
+<script>
+  const emailKey1 = "{{ emailKey1 }}";
+  const emailKeyService = "{{ emailKeyService }}";
+  const emailTemp = "{{ emailTemp }}";
+</script>
+
+
+
+<script type="text/javascript" 
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js">
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+        crossorigin="anonymous">
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script src="../public/js/local-storage.js"></script>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script src="../public/js/email.js"></script>
+{% endblock %}

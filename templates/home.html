@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="https://cdn.pixabay.com/photo/2016/05/30/14/46/man-1424877_1280.png" 
+             class="d-block mx-lg-auto img-fluid"
+             alt="image" 
+             width="700" 
+             height="500" 
+             loading="lazy"
+             id="main-image">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold lh-1 mb-3">
+            Welcome to Good Books
+        </h1>
+        <p class="lead">
+            Good Books is a site that is dedicated to providing you with free tools
+            that help you find books or discover new ones. The site offers book
+            searching tools, book recommendations and book news. 
+        </p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+         <a class="btn btn-primary btn-lg px-4 me-md-2" 
+            href="/search" 
+            role="button">
+            Search Books
+         </a>
+         <a class="btn btn-outline-secondary btn-lg px-4" 
+            href="/recommendations" 
+            role="button">
+            Recommendations
+         </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Fiction PaperBack -->
+
+<div class="container">
+  <h2 class="pb-2 border-bottom display-5 fw-bold text-center" 
+      style="padding-top: 50px;">
+      Fiction PaperBack
+  </h2>
+
+<div class="row row-cols-1 row-cols-md-5 g-4">
+  {% for book in fictionPaperBack %}
+  <div class="col">
+    <a href="{{book.amazon_product_url}}">
+      <img src="{{book.book_image}}" 
+           class="card-img" 
+           alt="book">
+    </a>
+  </div>  
+  {% endfor %}
+</div>
+
+<br>
+
+
+<!-- NonFiction PaperBack -->
+<h2 class="pb-2 border-bottom display-5 fw-bold text-center" 
+      style="padding-top: 50px;">
+      Non-Fiction PaperBack
+  </h2>
+<div class="row row-cols-1 row-cols-md-5 g-4">
+  {% for book in paperBackNonFiction %}
+  <div class="col">
+    <a href="{{book.amazon_product_url}}">
+      <img src="{{book.book_image}}" 
+           class="card-img" 
+           alt="book">
+    </a>
+  </div>  
+  {% endfor %}
+</div>
+
+<!-- Hardcover Fiction -->
+<h2 class="pb-2 border-bottom display-5 fw-bold text-center" 
+      style="padding-top: 50px;">
+      Hardcover Fiction
+  </h2>
+<div class="row row-cols-1 row-cols-md-5 g-4">
+  {% for book in hardcoverFiction %}
+  <div class="col">
+    <a href="{{book.amazon_product_url}}">
+      <img src="{{book.book_image}}" 
+           class="card-img" 
+           alt="book">
+    </a>
+  </div>  
+  {% endfor %}
+</div>
+
+
+<!-- Young Adult Hardcover -->
+<h2 class="pb-2 border-bottom display-5 fw-bold text-center" 
+      style="padding-top: 50px;">
+      Young Adult Hardcover
+  </h2>
+<div class="row row-cols-1 row-cols-md-5 g-4">
+  {% for book in youngAdultHardcover %}
+  <div class="col">
+    <a href="{{book.amazon_product_url}}">
+      <img src="{{book.book_image}}" 
+           class="card-img" 
+           alt="book">
+    </a>
+  </div>  
+  {% endfor %}
+</div>
+</div>
+
+<div class="divider"></div>
+
+
+
+{% endblock %}
+

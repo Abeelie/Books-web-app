@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="container">
+    <h2 class="pb-2 border-bottom display-5 fw-bold text-center" 
+        style="padding-top: 20px;">
+      Book News
+    </h2>
+</div>
+
+<div class="container">
+    {% for news in bookNews %}
+<div class="card" style="margin-bottom: 50px;">
+    <div class="card-header text-center">
+      {{news.headline.main}}
+    </div>
+    <img src="https://www.nytimes.com/{{news.multimedia[0].url}}" 
+         class="card-img-top" 
+         alt="image"
+         height="500">
+    <div class="card-body">
+      <h5 class="card-title text-center">{{news.byline.original}}</h5>
+      <h6 class="card-title text-center">{{news.source}}</h6>
+      <p class="card-text text-center">{{news.abstract}}</p>
+      <center>
+        <a href="{{news.web_url}}" 
+           class="btn btn-primary">
+           Full Story
+        </a>
+      </center>
+    </div>
+</div>
+  {% endfor %}
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="container">
+    <h2 class="pb-2 border-bottom display-5 fw-bold text-center" 
+      style="padding-top: 20px;">
+      Recommendations
+    </h2>
+</div>
+
+<div class="container">
+    <div class="row g-0">
+    
+    {% for book in recommendations %}
+      <div class="col-md-4" style="padding-bottom: 100px;">
+        <img src="{{book.book_image}}" 
+             class="img-fluid rounded-start" 
+             alt="book">
+      </div>
+      <div class="col-md-8" style="padding-bottom: 100px;">
+        <div class="card-body">
+          <h3 class="card-title">Rank: {{book.rank}}</h3>
+          <h4 class="card-title">{{book.title}}</h4>
+          <h5 class="card-title">{{book.contributor}}</h5>
+          <h6 class="card-title">{{book.publisher}}</h6>
+          <p class="card-text">{{book.description}}</p>
+          <a class="btn btn-primary"
+             href="{{book.amazon_product_url}}" 
+             role="button">
+             Buy Now!!
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+
+</div>
+
+
+
+
+
+
+{% endblock %}

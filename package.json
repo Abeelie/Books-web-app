@@ -1,0 +1,23 @@
+{
+  "name": "books",
+  "version": "1.0.0",
+  "description": "A book search app",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "author": "Abraham Elie",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12",
+    "nunjucks": "^3.2.3"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6",
+    "supertest": "^6.1.6"
+  }
+}
